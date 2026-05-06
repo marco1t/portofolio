@@ -1,6 +1,7 @@
-# Portfolio de Roulem Baitiche
+# Carnet de compétences PPP ING4 de Roulem Baitiche
 
-Portfolio personnel construit avec Vite, React et TypeScript.
+Portfolio personnel construit avec Vite, React et TypeScript, adapté au cahier
+des charges du carnet de compétences PPP ING4.
 
 ## Commandes
 
