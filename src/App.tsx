@@ -15,25 +15,25 @@ import './App.css'
 const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const rubricItems = [
-  { label: 'Profil · formation', points: '3 pts', href: '#profil' },
-  { label: 'Compétences', points: '5 pts', href: '#competences' },
-  { label: 'LEP', points: '6 pts', href: '#lep' },
-  { label: 'Valeurs', points: '3 pts', href: '#valeurs' },
-  { label: 'Projet pro', points: '2 pts', href: '#projet' },
+  { label: 'Profil · formation', href: '#profil' },
+  { label: 'Compétences', href: '#competences' },
+  { label: 'LEP', href: '#lep' },
+  { label: 'Valeurs', href: '#valeurs' },
+  { label: 'Projet pro', href: '#projet' },
 ]
 
 const profileCards = [
   {
     title: 'Profil',
-    points: ['Étudiant ING4 à l’ESAIP', 'Spécialisation cybersécurité', 'Développement, réseaux et données'],
+    items: ['Étudiant ING4 à l’ESAIP', 'Spécialisation cybersécurité', 'Développement, réseaux et données'],
   },
   {
     title: 'Orientation',
-    points: ['Comprendre les systèmes', 'Résoudre des problèmes techniques', 'Travailler sur du concret'],
+    items: ['Comprendre les systèmes', 'Résoudre des problèmes techniques', 'Travailler sur du concret'],
   },
   {
     title: 'Formation',
-    points: ['Technique', 'Projet', 'Communication', 'Travail d’équipe', 'Vision entreprise'],
+    items: ['Technique', 'Projet', 'Communication', 'Travail d’équipe', 'Vision entreprise'],
   },
 ]
 
@@ -69,12 +69,12 @@ const competenceGroups = [
 
 const lepMilestones = [
   {
-    title: 'ING3 · Copain',
-    points: ['Distribution alimentaire', 'Contact avec les besoins étudiants', 'Organisation et respect'],
+    title: 'ING3 · Cop1',
+    items: ['Distribution alimentaire', 'Contact avec les besoins étudiants', 'Organisation et respect'],
   },
   {
-    title: 'ING4 · Copain',
-    points: ['Poursuite de la distribution', 'Soutien scolaire', 'Écoute et pédagogie'],
+    title: 'ING4 · Cop1 et collège',
+    items: ['Poursuite de la distribution avec Cop1', 'Soutien scolaire auprès d’enfants au collège', 'Écoute et pédagogie'],
   },
 ]
 
@@ -165,7 +165,7 @@ function App() {
             </div>
             <div>
               <dt>LEP</dt>
-              <dd>Copain · bénévolat</dd>
+              <dd>Cop1 · bénévolat</dd>
             </div>
           </dl>
         </div>
@@ -185,14 +185,13 @@ function App() {
         {rubricItems.map((item) => (
           <a href={item.href} key={item.label}>
             <span>{item.label}</span>
-            <strong>{item.points}</strong>
           </a>
         ))}
       </section>
 
       <section className="section-block" id="profil">
         <div className="section-heading">
-          <p className="eyebrow">1 · Profil, parcours, formation · 3 points</p>
+          <p className="eyebrow">Profil, parcours, formation</p>
           <h2>Profil et formation</h2>
         </div>
 
@@ -201,7 +200,7 @@ function App() {
             <article className="narrative-card" key={card.title}>
               <h3>{card.title}</h3>
               <ul className="clean-list">
-                {card.points.map((point) => (
+                {card.items.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
@@ -240,7 +239,7 @@ function App() {
       <section className="section-block muted" id="competences">
         <div className="section-inner">
           <div className="section-heading">
-            <p className="eyebrow">2 · Compétences · 5 points</p>
+            <p className="eyebrow">Compétences</p>
             <h2>Compétences liées au métier d’ingénieur</h2>
           </div>
 
@@ -262,8 +261,8 @@ function App() {
 
       <section className="section-block" id="lep">
         <div className="section-heading">
-          <p className="eyebrow">3 · LEP sur 2 ans · 6 points</p>
-          <h2>Mon LEP : Copain</h2>
+          <p className="eyebrow">LEP sur 2 ans</p>
+          <h2>Mon LEP : Cop1</h2>
         </div>
 
         <div className="lep-layout lean">
@@ -271,7 +270,7 @@ function App() {
             <article className="lep-card" key={item.title}>
               <h3>{item.title}</h3>
               <ul className="clean-list">
-                {item.points.map((point) => (
+                {item.items.map((point) => (
                   <li key={point}>{point}</li>
                 ))}
               </ul>
@@ -292,7 +291,7 @@ function App() {
       <section className="section-block muted" id="valeurs">
         <div className="section-inner">
           <div className="section-heading">
-            <p className="eyebrow">4 · Valeurs et anti-valeurs · 3 points</p>
+            <p className="eyebrow">Valeurs et anti-valeurs</p>
             <h2>Valeurs et anti-valeurs</h2>
           </div>
 
@@ -319,7 +318,7 @@ function App() {
 
       <section className="section-block project-section" id="projet">
         <div className="section-heading">
-          <p className="eyebrow">5 · Projet professionnel · 2 points</p>
+          <p className="eyebrow">Projet professionnel</p>
           <h2>Projet professionnel</h2>
         </div>
 
@@ -336,8 +335,8 @@ function App() {
 
       <footer className="contact-section" id="contact">
         <div>
-          <p className="eyebrow">Présentation · 1 point</p>
-          <h2>Portfolio clair, structuré et allégé.</h2>
+          <p className="eyebrow">Contact</p>
+          <h2>Disponible pour échanger.</h2>
         </div>
         <div className="contact-actions">
           <a className="button primary" href="mailto:baitiche.roulem@outlook.fr">
